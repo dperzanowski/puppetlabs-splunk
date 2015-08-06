@@ -23,6 +23,7 @@ class splunk::virtual {
 
   @service { $virtual_services:
     ensure     => running,
+    start => '/opt/splunkforwarder/bin/splunk start --accept-license --answer-yes'
     enable     => true,
     hasstatus  => true,
     hasrestart => true,
